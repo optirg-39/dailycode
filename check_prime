@@ -1,0 +1,12 @@
+def is_prime(num):
+    if num<0 or num%2==0 or num==1 or num==9:
+        return False 
+    elif num==2 or num==3 or num==5 or num==7 or num==11 or num==13:
+        return True
+    else:
+        NUM=int(num**0.5)
+        for i in range(3,NUM,2):
+            if num%i==0:
+                return False
+            else:
+                return True
