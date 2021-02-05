@@ -1,0 +1,10 @@
+
+class Person:
+    count=0
+    def __init__(self,name):
+        Person.count+=1
+        self.name_object=name
+A=Person("rishabh")
+B=Person("somya")
+C=Person("aayushi")
+print((Person.count))
