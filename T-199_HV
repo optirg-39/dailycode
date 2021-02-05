@@ -1,0 +1,28 @@
+
+class Phone:
+    def __init__(self,brand,model,price):
+        self.name=brand
+        self.model=model
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.name} {self.model}"
+
+
+    def make_a_call(self,number):
+        return f"calling {number}"
+
+class Smartphone(Phone):
+    def __init__(self,brand,model,price,ram,internal_memory,rare_camera):
+        # Phone.__init__(self,brand,model,price)
+        super().__init__(brand,model,price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rare_camera=rare_camera
+
+
+P1=Phone("Nokia","a1100",1000)
+P2=Smartphone("Oneplus","5",30000,"6GB","64GB","20MP")
+
+print(P1.full_name())
+print(P2.full_name())
