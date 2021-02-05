@@ -1,0 +1,14 @@
+
+class Person:
+    def __init__(self,name,last_name,age):
+        self._name=name
+        self._l_name=last_name
+        self._age=age
+    @classmethod
+    def constructer(cls,string):
+        first,last,age=string.split(",")
+        return cls(first,last,age)
+
+P1=Person("rishabh","Gupta",26)
+P2=Person("somya","singahal",20)
+P3=Person.constructer("aayushi,sanghi,28")
