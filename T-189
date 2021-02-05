@@ -1,0 +1,16 @@
+class Laptop():
+    def __init__(self,brand,model,price):
+        # instance variable
+        self.bnd=brand
+        self.mod=model
+        self.rate=price
+    def info_all(self):
+        return self.bnd+" "+self.mod+" "+str(self.rate)
+    def discount(self,num):
+        return self.rate*(100-num)/100
+
+L1=Laptop("dell","is12595",48000)
+L2=Laptop("hp","mv12584",59000)
+print(L1.bnd,L1.rate,L1.mod)
+print(L1.info_all())
+print(L1.discount(40))
