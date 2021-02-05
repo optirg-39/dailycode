@@ -1,0 +1,53 @@
+class Phone:
+    def __init__(self,brand,model,price):
+        self.name=brand
+        self.model=model
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.name} {self.model}"
+
+
+    def make_a_call(self,number):
+        return f"calling {number}"
+
+class Smartphone(Phone):
+    def __init__(self,brand,model,price,ram,internal_memory,rare_camera):
+        # Phone.__init__(self,brand,model,price)
+        super().__init__(brand,model,price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rare_camera=rare_camera
+
+    def full_name(self):#Method over writing
+        return f"name is {self.name} model is {self.model} and rare camera is {self.rare_camera} "
+
+# class Smartphone2(Phone):
+#     def __init__(self,brand,model,price,ram,internal_memory,rare_camera):
+#         super().__init__(brand,model,price)
+        # self.ram=ram
+        # self.internal_memory=internal_memory
+        # self.rare_camera=rare_camera
+
+class FlagshipPhone(Smartphone):
+    def __init__(self,brand,model,price,ram,internal_memory,rare_camera,front_camera):
+        super().__init__(brand,model,price,ram,internal_memory,rare_camera)
+        self.front_camera=front_camera
+    # def full_name(self):
+
+P1=Phone("Nokia","a1100",1000)
+P2=FlagshipPhone("poco","5",30000,"6GB","64GB","20MP","16MP")
+
+# print(P1.full_name())
+# print(P2.full_name())
+# print(P2.front_camera)
+# print(help(Phone))
+# print(help(FlagshipPhone))
+
+# print(isinstance(P2,Smartphone))
+# print(isinstance(P2,FlagshipPhone))
+# print(isinstance(P1,FlagshipPhone))
+
+print(issubclass(Smartphone,Phone))
+print(issubclass(Smartphone,FlagshipPhone))
+print(issubclass(FlagshipPhone,Smartphone))
