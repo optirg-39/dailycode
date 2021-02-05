@@ -1,0 +1,15 @@
+
+class Person:
+    count_instances=0
+    def __init__(self,name):
+        Person.count_instances+=1
+        self.name_object=name
+
+    @classmethod
+    def no_off_instances(cls):
+        return f"you have created {Person.count_instances} no of instances of {cls.__name__} class"
+A=Person("rishabh")
+B=Person("somya")
+C=Person("aayushi")
+print((Person.count_instances))
+print(Person.no_off_instances())
