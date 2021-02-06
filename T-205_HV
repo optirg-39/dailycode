@@ -1,0 +1,22 @@
+class Animal:
+    def __init__(self,name):
+        self.name=name
+
+    def sound(self):
+        return NotImplementedError('Define this method in subclass')
+
+class Dog(Animal):
+    def __init__(self,name,bread):
+        super().__init__(name)
+        self.bread=bread
+
+class Cat(Animal):
+    def __init__(self,name,bread):
+        super().__init__(name)
+        self.bread=bread
+    def sound(self):
+        return "Miou miou"
+
+A=Cat("Black_cat","vat")
+
+print(A.sound())
