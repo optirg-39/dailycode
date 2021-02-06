@@ -1,0 +1,6 @@
+def add(a,b):
+    if type(a) is int and type(b) is int:
+        return a+b
+    return TypeError(f"opps you enterd wrong type {type(a)} have to enter int type")
+print(add(5,10))
+print(add("51",10))
