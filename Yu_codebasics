@@ -1,0 +1,19 @@
+
+expance=[2200,2350,2600,2130,2190]
+
+print(expance[1]-expance[0])
+
+sum=0
+
+for i in range(3):
+    sum+=expance[i]
+print(sum)
+# print(2000 in expance)
+for i in expance:
+    if i==2000:
+        print("Yes you spent exactly 2000 dollars in any month ")
+expance.append(1980)
+print(expance)
+
+expance[3]+=200
+print(expance)
