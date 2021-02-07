@@ -1,0 +1,115 @@
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+class LinledList:
+    def __init__(self):
+        self.head=None
+
+    def length_LL(self):
+        currentNode=self.head
+        length=0
+        while True:
+            if currentNode is None:
+                return length
+            currentNode=currentNode.next
+            length+=1
+
+    def insertfirst(self,newNode):
+        if self.head is None:
+            self.head=newNode
+        else:
+            temporary=self.head
+            self.head=newNode
+            # self.head.next=temporary
+            newNode.next=temporary
+
+    def insert_btw(self,newNode,position):
+        if position<0 or position>self.length_LL():
+            print("Invalid Position")
+            return
+
+        elif position==0:
+            self.insertfirst(newNode)
+            return
+
+
+        currentNode=self.head
+        currentPosition=0
+
+        while True:
+            if currentPosition==position:
+                previousNode.next=newNode
+                newNode.next=currentNode
+                break
+            previousNode=currentNode
+            currentNode=currentNode.next
+            currentPosition+=1
+    def insertLast(self,new_Node):
+        if self.head is None:
+            self.head=new_Node
+        else:
+            #Let's assume a variable last_Node
+            last_Node=self.head
+            while True:
+                if last_Node.next is None:
+                    break
+                # if last_Node is None:
+                last_Node=last_Node.next
+            last_Node.next=new_Node
+    def delete_at(self,position):
+        currentNode=self.head
+        count=0
+        while True:
+            if count==position:
+                previousNode.next=currentNode.next
+                currentNode.next=None
+                break
+            previousNode=currentNode
+            currentNode=currentNode.next
+            count+=1
+    def delete_last(self):
+        currentNode=self.head
+        while True:
+            if currentNode.next is None:
+                previousNode.next=None
+                break
+            previousNode=currentNode
+            currentNode=currentNode.next
+
+    def print_Linkedlist(self):
+        if self.head is None:
+            print("Linkedlist is empty")
+        else:
+            current_Node=self.head
+            while True:
+
+                if current_Node is None:
+                    break
+                print(current_Node.data)
+                current_Node=current_Node.next
+
+
+linkedList=LinledList()
+first_node=Node("Rishabh")
+linkedList.insertLast(first_node)
+second_Node=Node("Somya")
+linkedList.insertLast(second_Node)
+third_Node=Node("aayushi")
+linkedList.insertLast(third_Node)
+linkedList.print_Linkedlist()
+
+zeroth_node=Node("Gupta")
+linkedList.insertfirst(zeroth_node)
+linkedList.print_Linkedlist()
+
+between_Node=Node("Singhal")
+linkedList.insert_btw(between_Node,3)
+linkedList.print_Linkedlist()
+print(linkedList.length_LL())
+# linkedList.delete_last()
+linkedList.print_Linkedlist()
+linkedList.delete_at(3)
+linkedList.print_Linkedlist()
