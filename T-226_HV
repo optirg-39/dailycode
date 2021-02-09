@@ -1,0 +1,11 @@
+
+from csv import DictWriter
+with open('final1.csv','w',newline='') as f:
+    csv_writer=DictWriter(f,fieldnames=['firstname','lastname','age'])
+    csv_writer.writeheader()
+    # writerow, writerows
+    # csv_writer.writerow({'firstname':'Rishabh','lastname':'gupta','age':26})
+    # csv_writer.writerow({'firstname': 'Somya', 'lastname': 'gupta', 'age': 20})
+    csv_writer.writerows([{'firstname':'Rishabh','lastname':'gupta','age':26},
+                          {'firstname':'Somya','lastname':'gupta','age':20},
+                          {'firstname':'Ayushi','lastname':'gupta','age':28}])
